@@ -16,7 +16,28 @@ public class Main {
             System.out.println("3. Cheeseburger  | W 6.9 | 포테이토 번과 비프패티, 치즈가 토핑된 치즈버거");
             System.out.println("4. Hamburger     | W 5.4 | 비프패티를 기반으로 야채가 들어간 기본버거");
             System.out.println("0. 종료      | 종료");
+
+            // 사용자 입력을 숫자로 변환
+            int select;
+            try {
+                select = Integer.parseInt(sc.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("번호를 입력해주세요.");
+                continue;
+            }
+
+            // 프로그램 종료
+            if (select == 0) {
+                System.out.println("프로그램을 종료합니다.");
+                break;
+            } else if (select >= 1 && select <= 4) {
+                System.out.println("선택한 메뉴: " + select + "번");
+            } else {
+                System.out.println("잘못된 번호입니다. 다시 입력해주세요.");
+            }
+            System.out.println();
         }
+        sc.close();
     }
 }
 
